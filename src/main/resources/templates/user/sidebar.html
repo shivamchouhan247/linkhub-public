@@ -1,0 +1,82 @@
+<div data-th-fragment="sidebar">
+
+    <!-- Sidebar -->
+    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full 
+         bg-white backdrop-blur-xl shadow-xl border-r border-gray-200 sm:translate-x-0 
+         dark:bg-gray-800/70 dark:border-gray-700" aria-label="Sidebar">
+
+        <div class="h-full px-4 pb-6 overflow-y-auto">
+            <ul class="space-y-3 font-medium">
+
+                <!-- Dashboard -->
+                <li>
+                    <a data-th-href="@{'/user/dashboard'}" class="flex items-center p-3 rounded-xl transition-all duration-200
+                 bg-gradient-to-r from-blue-50 to-white hover:scale-[1.02] hover:shadow-md
+                 text-gray-700 dark:text-gray-200 dark:from-gray-700 dark:to-gray-800 dark:hover:shadow-lg">
+                        <svg class="w-6 h-6 text-blue-500 dark:text-blue-400" fill="currentColor" viewBox="0 0 22 21">
+                            <path
+                                d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
+                            <path
+                                d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                        </svg>
+                        <span class="ms-3 font-semibold">Dashboard</span>
+                    </a>
+                </li>
+
+                <!-- Profile -->
+                <li>
+                    <a data-th-href="@{'/user/profile'}" class="flex items-center p-3 rounded-xl transition-all duration-200
+                 hover:scale-[1.02] hover:bg-gray-100/60 hover:shadow-md
+                 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700/60">
+                        <svg class="w-6 h-6 text-purple-500 dark:text-purple-400" fill="currentColor"
+                            viewBox="0 0 18 18">
+                            <path
+                                d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
+                        </svg>
+                        <span class="ms-3 font-semibold">Profile</span>
+                    </a>
+                </li>
+
+                <!-- Add Contact -->
+                <li>
+                    <a data-th-href="@{'/user/contacts/add'}" class="flex items-center p-3 rounded-xl transition-all duration-200
+                 hover:scale-[1.02] hover:bg-gray-100/60 hover:shadow-md
+                 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700/60">
+                        <svg class="w-6 h-6 text-teal-500 dark:text-teal-400" fill="currentColor" viewBox="0 0 640 512">
+                            <path
+                                d="M136 128a120 120 0 1 1 240 0 120 120 0 1 1 -240 0zM48 482.3C48 383.8 127.8 304 226.3 304l59.4 0c98.5 0 178.3 79.8 178.3 178.3 0 16.4-13.3 29.7-29.7 29.7L77.7 512C61.3 512 48 498.7 48 482.3zM544 96c13.3 0 24 10.7 24 24l0 48 48 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-48 0 0 48c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-48-48 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0 0-48c0-13.3 10.7-24 24-24z" />
+                        </svg>
+                        <span class="ms-3 font-semibold">Add Contact</span>
+                    </a>
+                </li>
+                <!-- Contacts -->
+                <li>
+                    <a data-th-href="@{'/user/contacts'}" class="flex items-center p-3 rounded-xl transition-all duration-200
+                 hover:scale-[1.02] hover:bg-gray-100/60 hover:shadow-md
+                 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-700/60">
+                        <svg class="w-6 h-6 text-amber-500 dark:text-amber-400" fill="currentColor"
+                            viewBox="0 0 640 640">
+                            <path
+                                d="M160 64C124.7 64 96 92.7 96 128L96 512C96 547.3 124.7 576 160 576L448 576C483.3 576 512 547.3 512 512L512 128C512 92.7 483.3 64 448 64L160 64zM272 352L336 352C380.2 352 416 387.8 416 432C416 440.8 408.8 448 400 448L208 448C199.2 448 192 440.8 192 432C192 387.8 227.8 352 272 352zM248 256C248 225.1 273.1 200 304 200C334.9 200 360 225.1 360 256C360 286.9 334.9 312 304 312C273.1 312 248 286.9 248 256zM576 144C576 135.2 568.8 128 560 128C551.2 128 544 135.2 544 144L544 208C544 216.8 551.2 224 560 224C568.8 224 576 216.8 576 208L576 144zM576 272C576 263.2 568.8 256 560 256C551.2 256 544 263.2 544 272L544 336C544 344.8 551.2 352 560 352C568.8 352 576 344.8 576 336L576 272zM560 384C551.2 384 544 391.2 544 400L544 464C544 472.8 551.2 480 560 480C568.8 480 576 472.8 576 464L576 400C576 391.2 568.8 384 560 384z" />
+                        </svg>
+                        <span class="ms-3 font-semibold">Contacts</span>
+                    </a>
+                </li>
+
+                <!-- Add more items the same way -->
+            </ul>
+        </div>
+    </aside>
+
+
+    <!-- Page content -->
+    <!-- <div class="p-4 sm:ml-64">
+  <div class="p-4 mt-14 rounded-lg border border-dashed border-gray-300 dark:border-gray-600">
+    <div class="flex items-center justify-center h-48 rounded-md bg-gray-50 dark:bg-gray-800 shadow-inner">
+      <p class="text-gray-400 dark:text-gray-500">Content Area</p>
+    </div>
+  </div>
+</div> -->
+
+
+</div>

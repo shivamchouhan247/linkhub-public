@@ -1,0 +1,130 @@
+ /* Modern Sidebar Shadow Effects */
+        #sidebar {
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08), 
+                        2px 0 8px rgba(0, 0, 0, 0.04),
+                        0 0 0 1px rgba(0, 0, 0, 0.02);
+        }
+
+        .dark #sidebar {
+            box-shadow: 4px 0 32px rgba(0, 0, 0, 0.5), 
+                        2px 0 12px rgba(0, 0, 0, 0.3),
+                        0 0 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Smooth transitions for nav items */
+        #sidebar a {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Hover effect with modern glow */
+        #sidebar a:hover:not(.active-nav-item) {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.12);
+        }
+
+        .dark #sidebar a:hover:not(.active-nav-item) {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Active item modern gradient with 3D shadow */
+        .active-nav-item {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4), 
+                        0 4px 12px rgba(168, 85, 247, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+            transform: translateX(4px);
+        }
+
+        .dark .active-nav-item {
+            box-shadow: 0 8px 28px rgba(99, 102, 241, 0.5), 
+                        0 4px 14px rgba(168, 85, 247, 0.4),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+        }
+
+        /* Shimmer effect on hover */
+        #sidebar a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s;
+        }
+
+        #sidebar a:hover::before {
+            left: 100%;
+        }
+
+        /* Logo container modern styling */
+        .logo-container {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.04) 0%, rgba(168, 85, 247, 0.04) 100%);
+        }
+
+        .dark .logo-container {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+        }
+
+        /* Toggle button modern 3D effect */
+        #sidebarToggle {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 
+                        0 2px 4px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        #sidebarToggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.25), 
+                        0 3px 8px rgba(99, 102, 241, 0.15);
+        }
+
+        #sidebarToggle:active {
+            transform: scale(0.95);
+        }
+
+        .dark #sidebarToggle {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 
+                        0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer gradient overlay */
+        .footer-gradient {
+            background: linear-gradient(to top, rgba(99, 102, 241, 0.03), transparent);
+        }
+
+        .dark .footer-gradient {
+            background: linear-gradient(to top, rgba(99, 102, 241, 0.06), transparent);
+        }
+
+        /* Icon glow on active */
+        .active-nav-item svg {
+            filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.3));
+        }
+
+        /* Smooth sidebar transition */
+        #sidebar {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Custom scrollbar */
+        #sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        #sidebar::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.3);
+            border-radius: 3px;
+        }
+
+        #sidebar::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.5);
+        }

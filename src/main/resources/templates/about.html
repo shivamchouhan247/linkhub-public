@@ -1,0 +1,251 @@
+<html>
+
+<head>
+    <title>About | LinkHub</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link rel="stylesheet" data-th-href="@{'/css/homepage.css'}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeSlideUp {
+            animation: fadeSlideUp 0.5s ease-out forwards;
+        }
+
+        .transition-smooth {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+    <div data-th-replace="~{navbar::homenavbar}">
+    </div>
+    <div
+        class="mt-16 animate-fadeSlideUp bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 min-h-screen">
+
+        <!-- Hero / Intro -->
+        <section class="max-w-5xl mx-auto mb-12">
+            <span
+                class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300 mb-4">
+                About LinkHub
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+                Built to make your<br class="hidden sm:block" />
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-sky-500 to-violet-500">
+                    relationships work smarter.
+                </span>
+            </h1>
+            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl">
+                LinkHub is your smart contact hub for founders, teams, and professionals who never want to lose context,
+                momentum, or an important connection again.
+            </p>
+        </section>
+
+        <!-- 3 Pillars / Cards -->
+        <section class="max-w-6xl mx-auto mb-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div
+                class="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100/80 dark:border-gray-700/70 rounded-2xl p-6 shadow-md hover:shadow-xl transition-smooth">
+                <div
+                    class="w-11 h-11 rounded-xl flex items-center justify-center bg-indigo-50 dark:bg-indigo-900/40 mb-4">
+                    <i class="fas fa-user-friends text-indigo-600 dark:text-indigo-300"></i>
+                </div>
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    Contact-first by design
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    Store, search, and act on every relationship with a workspace built around real-world contacts—not
+                    just records.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100/80 dark:border-gray-700/70 rounded-2xl p-6 shadow-md hover:shadow-xl transition-smooth">
+                <div
+                    class="w-11 h-11 rounded-xl flex items-center justify-center bg-emerald-50 dark:bg-emerald-900/40 mb-4">
+                    <i class="fas fa-shield-alt text-emerald-600 dark:text-emerald-300"></i>
+                </div>
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    Privacy & security first
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    Your data stays in your control. We focus on secure storage, safe access, and predictable behavior
+                    you can trust.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100/80 dark:border-gray-700/70 rounded-2xl p-6 shadow-md hover:shadow-xl transition-smooth">
+                <div
+                    class="w-11 h-11 rounded-xl flex items-center justify-center bg-violet-50 dark:bg-violet-900/40 mb-4">
+                    <i class="fas fa-bolt text-violet-600 dark:text-violet-300"></i>
+                </div>
+                <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                    Built for speed & focus
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    From smart search to one-click email and dashboards, LinkHub keeps your workflows fast and
+                    distraction-free.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission + How we help -->
+        <section class="max-w-6xl mx-auto mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Mission -->
+            <div
+                class="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100/80 dark:border-gray-700/70 rounded-2xl p-6 shadow-md">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                    Our mission
+                </h2>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                    Relationships drive opportunities, but most tools treat contacts like static entries in a list.
+                    LinkHub turns them into a living, searchable system that helps you know who to reach out to, when,
+                    and why.
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                    Whether you’re closing deals, managing clients, or nurturing a growing network,
+                    LinkHub keeps context, links, and communication one clean workspace away.
+                </p>
+            </div>
+
+            <!-- Who it's for -->
+            <div
+                class="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100/80 dark:border-gray-700/70 rounded-2xl p-6 shadow-md">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                    Made for modern teams & professionals
+                </h2>
+                <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <span
+                            class="mt-1 w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+                            <i class="fas fa-check text-[10px] text-indigo-600 dark:text-indigo-300"></i>
+                        </span>
+                        <span>
+                            <strong>Founders & sales teams</strong> – keep warm leads, partners, and investors organized
+                            with
+                            one source of truth for every interaction.
+                        </span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span
+                            class="mt-1 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center">
+                            <i class="fas fa-check text-[10px] text-emerald-600 dark:text-emerald-300"></i>
+                        </span>
+                        <span>
+                            <strong>Consultants & freelancers</strong> – manage clients, notes, and key links in one
+                            place
+                            instead of across scattered tools.
+                        </span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span
+                            class="mt-1 w-5 h-5 rounded-full bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center">
+                            <i class="fas fa-check text-[10px] text-violet-600 dark:text-violet-300"></i>
+                        </span>
+                        <span>
+                            <strong>Teams</strong> – share important contacts securely and keep everyone aligned on who
+                            you know
+                            and how you work with them.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Timeline / How we evolve -->
+        <section class="max-w-6xl mx-auto mb-12">
+            <div class="flex items-center justify-between mb-4 gap-2">
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    Always improving
+                </h2>
+                <span
+                    class="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-medium bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300">
+                    Roadmap shaped by real users
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                <div
+                    class="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100/80 dark:border-gray-700/70 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 mb-1">
+                        Today
+                    </p>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-1">
+                        Smart contact foundation
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Powerful search, organized dashboards, and secure storage for your contacts, links, and key
+                        context.
+                    </p>
+                </div>
+                <div
+                    class="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100/80 dark:border-gray-700/70 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 mb-1">
+                        Next
+                    </p>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-1">
+                        Deeper insights
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Activity-based insights, reminders, and suggestions that help you follow up at the right moment.
+                    </p>
+                </div>
+                <div
+                    class="bg-white/90 dark:bg-gray-900/70 backdrop-blur-md border border-gray-100/80 dark:border-gray-700/70 rounded-2xl p-5 shadow-sm">
+                    <p class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 mb-1">
+                        Future
+                    </p>
+                    <h3 class="font-semibold text-gray-900 dark:text-white mb-1">
+                        Connected ecosystem
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Deeper integrations with email, calendars, CRMs, and collaboration tools you already rely on.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing CTA-ish note -->
+        <section class="max-w-4xl mx-auto mb-10">
+            <div
+                class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-600 via-sky-500 to-violet-600 p-[1px] shadow-lg">
+                <div
+                    class="bg-gray-900/95 dark:bg-gray-950/95 rounded-2xl px-6 py-6 sm:px-8 sm:py-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-lg sm:text-xl font-semibold text-white mb-1">
+                            We’re just getting started.
+                        </h2>
+                        <p class="text-sm text-gray-300 max-w-xl">
+                            LinkHub evolves with your feedback—new features, smoother flows, and better ways to keep
+                            people and context connected in one place.
+                        </p>
+                    </div>
+                    <a href="#"
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-white text-gray-900 hover:bg-gray-100 transition-smooth">
+                        Share feedback
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<script data-th-src="@{/js/script.js}"></script>
+
+</html>

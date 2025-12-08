@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{user/user_base::parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile | LinkHub</title>
+    <style>
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 12px 6px rgba(59, 130, 246, 0.2);
+            }
+        }
+
+        .animate-fadeSlideUp {
+            animation: fadeSlideUp 0.5s ease-out forwards;
+        }
+
+        .animate-pulseGlow {
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        .transition-smooth {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 min-h-screen">
+
+    <div id="content" class="mt-8 sm:mt-12 p-4 sm:p-6 sm:ml-64 animate-fadeSlideUp">
+
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
+            <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Profile</h1>
+            <div data-th-replace="~{message::alertbox}"></div>
+            <button id="editBtn"
+                class=" mt-4 md:mt-0 px-4 py-2.5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm transition-all duration-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 shadow-md hover:shadow-lg ">
+                Edit Profile
+            </button>
+        </div>
+
+        <form data-th-object="${updateProfileRequest}" data-th-action="@{/user/profile/update}" method="post"
+            enctype="multipart/form-data" novalidate>
+            <!-- Profile Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <!-- Profile Picture -->
+                <div
+                    class="flex flex-col items-center bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 shadow-md hover:shadow-xl transition-smooth animate-fadeSlideUp">
+                    <div
+                        class="relative group w-32 h-32 rounded-full overflow-hidden ring-4 ring-blue-200 dark:ring-blue-900 transition-smooth">
+                        <input data-th-field="*{imageFile}" type="file" id="profile-image" accept="image/*"
+                            class="hidden" disabled>
+                        <img id="preview-img" data-th-src="*{profilePic}" alt="Profile Picture"
+                            class="w-full h-full object-cover">
+                        <!-- Hover overlay camera icon -->
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center rounded-full cursor-pointer"
+                            id="image-overlay">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <!-- Remove Button -->
+                        <button type="button" id="remove-image"
+                            class="hidden absolute -bottom-1 -right-1 bg-red-500 hover:bg-red-600 text-white rounded-full p-2 shadow-lg transition-all duration-200 z-10">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div>
+                        <p data-th-if="${#fields.hasErrors('imageFile')}" data-th-errors="*{imageFile}"
+                            class=" flex items-center justify-center text-sm text-red-600 mt-2 ">
+                        </p>
+                    </div>
+
+                    <h2 data-th-text="${loggedInUser.name}"
+                        class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">John Doe</h2>
+                    <p data-th-text="${loggedInUser.email}" class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                        john@example.com</p>
+                </div>
+
+                <!-- Profile Details Form -->
+                <div
+                    class="lg:col-span-2 bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 shadow-md hover:shadow-xl transition-smooth animate-fadeSlideUp">
+
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Personal Information</h3>
+                    <id class="space-y-4">
+
+
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full
+                                Name</label>
+                            <input data-th-field="*{name}" type="text" id="name" placeholder="Enter full name" required
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-smooth">
+                        </div>
+                        <div>
+                            <p data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"
+                                class="mt-2 text-sm text-red-600 px-2">
+                            </p>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                            <input data-th-field="*{email}" type="email" id="email" placeholder="you@example.com"
+                                required
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-smooth">
+                        </div>
+
+                        <!-- Phone -->
+                        <div>
+                            <label for="phone"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone
+                                Number</label>
+                            <input data-th-field="*{phoneNumber}" type="text" id="phone" placeholder="+00 0000000000"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-smooth">
+                        </div>
+                        <div>
+                            <p data-th-if="${#fields.hasErrors('phoneNumber')}" data-th-errors="*{phoneNumber}"
+                                class="mt-2 text-sm text-red-600 px-2">
+                            </p>
+                        </div>
+
+
+                        <!-- About -->
+                        <div>
+                            <label for="about"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About</label>
+                            <textarea data-th-field="*{about}" id="about" rows="3" placeholder="Tell us about yourself"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-smooth"></textarea>
+                        </div>
+                        <div>
+                            <p data-th-if="${#fields.hasErrors('about')}" data-th-errors="*{about}"
+                                class="mt-2 text-sm text-red-600 px-2">
+                            </p>
+                        </div>
+
+                        <!-- Provider Info -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="provider"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Auth
+                                    Provider</label>
+                                <input data-th-field="*{provider}" type="text" id="provider"
+                                    placeholder="SELF / GOOGLE / GITHUB"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-smooth">
+                            </div>
+                            <div>
+                                <label for="providerId"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Provider
+                                    ID</label>
+                                <input type="text" id="providerId" placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-smooth">
+                            </div>
+                        </div>
+
+                        <!-- Verification Status -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="flex items-center gap-2">
+                                <input data-th-field="*{enabled}" id="enabled" type="checkbox"
+                                    class="w-4 h-4 accent-green-600 border dark:text-black dark:border-white">
+                                <label for="enabled" class="text-sm text-gray-900 dark:text-white">Account
+                                    Enabled</label>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <input data-th-field="*{emailVerified}" id="emailVerified" type="checkbox"
+                                    class="w-4 h-4 accent-green-600 border dark:text-black dark:border-white">
+                                <label for="emailVerified" class="text-sm text-gray-900 dark:text-white">Email
+                                    Verified</label>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <input data-th-field="*{phoneVerified}" id="phoneVerified" type="checkbox"
+                                    class=" w-4 h-4 border accent-purple-600 dark:text-black dark:border-white">
+                                <label for="phoneVerified" class="text-sm text-gray-900 dark:text-white">Phone
+                                    Verified</label>
+                            </div>
+                        </div>
+
+                        <!-- Update Button -->
+                        <div>
+                            <button id="updateBtn" type="submit"
+                                class="hidden px-5 py-2.5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm transition-all duration-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 shadow-md hover:shadow-lg">
+                                Update Profile
+                            </button>
+                        </div>
+                </div>
+
+            </div>
+        </form>
+     <!-- Activity Section -->
+    <!-- <div
+        class="mt-8 bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 shadow-md hover:shadow-xl transition-smooth animate-fadeSlideUp">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Recent Activity</h3>
+        <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+            <li
+                class="py-3 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-800/40 rounded-lg transition-smooth">
+                <p class="text-sm text-gray-800 dark:text-gray-200">Updated profile picture</p>
+                <span class="text-xs text-gray-500 dark:text-gray-400">5 mins ago</span>
+            </li>
+        </ul>
+        <div class="text-center py-10 text-gray-500 dark:text-gray-400">
+            <p>No recent activity yet.</p>
+        </div>
+    </div> -->
+    </div>
+
+   
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const editBtn = document.getElementById("editBtn");
+            const updateBtn = document.getElementById("updateBtn");
+            const inputs = document.querySelectorAll("input, textarea");
+            const nameInput = document.getElementById("name");
+            const phoneInput = document.getElementById("phone");
+            const aboutInput = document.getElementById("about");
+            const profileImageInput = document.getElementById("profile-image");
+            const previewImg = document.getElementById("preview-img");
+            const removeImageBtn = document.getElementById("remove-image");
+            const imageOverlay = document.getElementById("image-overlay");
+
+            let isEditing = false;
+
+            // Disable all fields initially
+            inputs.forEach(input => input.setAttribute("readonly", true));
+
+            editBtn.addEventListener("click", function () {
+                isEditing = !isEditing;
+
+                if (isEditing) {
+                    // Enable editable fields
+                    [nameInput, phoneInput, aboutInput].forEach(input => {
+                        input.removeAttribute("readonly");
+                    });
+                    profileImageInput.removeAttribute("disabled");
+
+                    updateBtn.classList.remove("hidden");
+                    editBtn.textContent = "Cancel Edit";
+                } else {
+                    // Disable everything again
+                    inputs.forEach(input => input.setAttribute("disabled", true));
+                    updateBtn.classList.add("hidden");
+                    editBtn.textContent = "Edit Profile";
+                }
+            });
+
+            // Image overlay click to trigger file input
+            imageOverlay.addEventListener("click", function () {
+                if (!profileImageInput.disabled) {
+                    profileImageInput.click();
+                }
+            });
+
+            // Image Upload Preview + Validation
+            profileImageInput.addEventListener("change", function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert("File size must be less than 5MB");
+                        return;
+                    }
+                    if (!file.type.match("image.*")) {
+                        alert("Please select a valid image file");
+                        return;
+                    }
+
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        previewImg.src = e.target.result;
+                        removeImageBtn.classList.remove("hidden");
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Remove selected image
+            removeImageBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                profileImageInput.value = "";
+                previewImg.src = "";
+                removeImageBtn.classList.add("hidden");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

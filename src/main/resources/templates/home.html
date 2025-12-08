@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkHub - Smart Contact Manager | Manage Your Contacts Smarter</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link rel="stylesheet" data-th-href="@{'/css/homepage.css'}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+    <!-- Navigation Bar -->
+    <div data-th-replace="~{navbar::homenavbar}"></div>
+
+    <!-- Page Wrapper -->
+    <main
+        class="mt-16 animate-fadeSlideUp bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 min-h-screen">
+
+        <!-- Hero Section -->
+        <section id="home"
+                 class="relative overflow-hidden gradient-bg text-white">
+            <div class="shape-1 top-10 left-10 animate-float"></div>
+            <div class="shape-2 bottom-20 right-20 animate-float" style="animation-delay: 3s;"></div>
+
+            <div class="container mx-auto px-6 py-20 lg:py-28 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Small badge like About/Contact -->
+                    <span
+                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/15 backdrop-blur-sm text-indigo-100 mb-4">
+                        Smart Contact Manager
+                    </span>
+
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-6">
+                        Manage your contacts
+                        <br class="hidden sm:block" />
+                        <span
+                            class="bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-white to-sky-200">
+                            smarter with LinkHub.
+                        </span>
+                    </h1>
+
+                    <p
+                        class="text-base sm:text-lg md:text-xl text-indigo-100/90 max-w-2xl mx-auto mb-8 md:mb-10">
+                        A modern, secure, and intuitive contact hub built for founders, teams,
+                        and professionals who never want to lose an important connection again.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a data-th-href="@{'/register'}"
+                           class="inline-flex items-center justify-center gap-2 bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-300 px-8 sm:px-10 py-3.5 rounded-full text-sm sm:text-base font-semibold hover:scale-[1.03] transform transition-all duration-300 shadow-xl hover-glow">
+                            Start free trial
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </a>
+
+                        <a href="#features"
+                           class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm sm:text-base font-medium bg-white/10 hover:bg-white/15 border border-white/20 text-indigo-50 backdrop-blur-md transition-all duration-300">
+                            Explore features
+                            <i class="fas fa-chevron-down text-[11px]"></i>
+                        </a>
+                    </div>
+
+                    <p class="mt-5 text-xs sm:text-sm text-indigo-100/80">
+                        No credit card required • 14-day free trial • Cancel anytime
+                    </p>
+                </div>
+            </div>
+
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
+                        fill="#F9FAFB" />
+                </svg>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 gradient-text">
+                        Powerful features built for real workflows
+                    </h2>
+                    <p class="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Everything you need to keep contacts, context, and communication in one clean, fast workspace.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="feature-card bg-white/90 dark:bg-gray-900/80 backdrop-blur-md border border-gray-100/80 dark:border-gray-800/70 p-8 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-indigo-50 dark:bg-indigo-900/40 mb-5">
+                            <i class="fas fa-search text-indigo-600 dark:text-indigo-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                            Smart search & filters
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Find any contact in seconds with fast, typo-tolerant search and flexible filters.
+                        </p>
+                    </div>
+
+                    <div
+                        class="feature-card bg-white/90 dark:bg-gray-900/80 backdrop-blur-md border border-gray-100/80 dark:border-gray-800/70 p-8 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-sky-50 dark:bg-sky-900/40 mb-5">
+                            <i class="fas fa-cloud text-sky-600 dark:text-sky-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                            Seamless cloud sync
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Keep your contacts in sync across devices with reliable, real-time cloud updates.
+                        </p>
+                    </div>
+
+                    <div
+                        class="feature-card bg-white/90 dark:bg-gray-900/80 backdrop-blur-md border border-gray-100/80 dark:border-gray-800/70 p-8 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-rose-50 dark:bg-rose-900/40 mb-5">
+                            <i class="fas fa-paper-plane text-rose-500 dark:text-rose-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                            One-click email
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Email saved contacts instantly—no app switching, just smooth communication.
+                        </p>
+                    </div>
+
+                    <div
+                        class="feature-card bg-white/90 dark:bg-gray-900/80 backdrop-blur-md border border-gray-100/80 dark:border-gray-800/70 p-8 rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transform transition-all duration-300">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-violet-50 dark:bg-violet-900/40 mb-5">
+                            <i class="fas fa-chart-line text-violet-600 dark:text-violet-300 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
+                            Smart dashboard
+                        </h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">
+                            Monitor contacts, favorites, and activity from a clean, focused overview.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Logos Section -->
+        <section class="py-16 bg-white dark:bg-gray-900 overflow-hidden">
+            <div class="container mx-auto px-6 mb-8">
+                <p class="text-center text-gray-500 dark:text-gray-400 text-lg">
+                    Trusted by professionals across modern teams
+                </p>
+            </div>
+            <div class="relative">
+                <div class="flex space-x-16 animate-marquee hover:pause">
+                    <div class="flex space-x-16">
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-microsoft text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-google text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-amazon text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-apple text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-facebook text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-linkedin text-5xl text-gray-400"></i>
+                        </div>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="flex space-x-16">
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-microsoft text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-google text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-amazon text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-apple text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-facebook text-5xl text-gray-400"></i>
+                        </div>
+                        <div
+                            class="flex items-center justify-center w-40 h-20 grayscale hover:grayscale-0 transition-all">
+                            <i class="fab fa-linkedin text-5xl text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 gradient-text">
+                        What our users say
+                    </h2>
+                    <p class="text-base md:text-lg text-gray-600 dark:text-gray-300">
+                        Join thousands of professionals who already run their network on LinkHub.
+                    </p>
+                </div>
+
+                <div class="relative max-w-6xl mx-auto">
+                    <div class="testimonial-slider flex overflow-x-auto scroll-hidden snap-x snap-mandatory gap-6 pb-4">
+                        <div class="min-w-full md:min-w-[calc(33.333%-1rem)] snap-center">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        SC
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-lg text-gray-900 dark:text-white">Shivam Chouhan</h4>
+                                        <p class="text-gray-500 dark:text-gray-400">CEO, LinkHub</p>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-200 italic">
+                                    "LinkHub keeps our entire contact ecosystem in one place. It’s fast, clean,
+                                    and gives us the context we need before every interaction."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="min-w-full md:min-w-[calc(33.333%-1rem)] snap-center">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        MR
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-lg text-gray-900 dark:text-white">Michael Rodriguez</h4>
+                                        <p class="text-gray-500 dark:text-gray-400">Sales Director, GlobalCorp</p>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-200 italic">
+                                    "The smart search and cloud sync save my team hours every week. We finally stopped
+                                    hunting for contacts across tools."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="min-w-full md:min-w-[calc(33.333%-1rem)] snap-center">
+                            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-400 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                        EC
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-lg text-gray-900 dark:text-white">Emily Chen</h4>
+                                        <p class="text-gray-500 dark:text-gray-400">Marketing Manager, InnovateTech</p>
+                                    </div>
+                                </div>
+                                <div class="flex mb-4">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <p class="text-gray-700 dark:text-gray-200 italic">
+                                    "Best contact tool we’ve used. The dashboard gives us a quick pulse on everything
+                                    that matters."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow hidden md:block"
+                        onclick="scrollTestimonials(-1)">
+                        <i class="fas fa-chevron-left text-gray-600 dark:text-gray-200"></i>
+                    </button>
+                    <button
+                        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow hidden md:block"
+                        onclick="scrollTestimonials(1)">
+                        <i class="fas fa-chevron-right text-gray-600 dark:text-gray-200"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-white dark:bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 gradient-text">
+                        Simple, transparent pricing
+                    </h2>
+                    <p class="text-base md:text-lg text-gray-600 dark:text-gray-300">
+                        Choose the plan that matches your stage—upgrade only when you’re ready.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div
+                        class="bg-white/95 dark:bg-gray-900/80 border border-gray-100 dark:border-gray-800 p-8 rounded-2xl shadow-lg hover:scale-[1.02] transform transition-all duration-300">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Basic</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900 dark:text-white">$9</span>
+                            <span class="text-gray-500 dark:text-gray-400">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 text-gray-700 dark:text-gray-300 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Up to 500 contacts</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Basic search & filters</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Cloud sync (2 devices)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Email support</li>
+                        </ul>
+                        <button
+                            class="w-full py-3 border-2 border-indigo-600 text-indigo-600 rounded-full font-bold hover:bg-indigo-600 hover:text-white transition-all duration-300 text-sm">
+                            Get started
+                        </button>
+                    </div>
+
+                    <div
+                        class="gradient-bg text-white p-8 rounded-2xl shadow-2xl hover:scale-[1.03] transform transition-all duration-300 relative">
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-xs font-bold">
+                            MOST POPULAR
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$29</span>
+                            <span class="opacity-80">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check mr-3"></i> Unlimited contacts</li>
+                            <li class="flex items-center"><i class="fas fa-check mr-3"></i> Smart search & insights</li>
+                            <li class="flex items-center"><i class="fas fa-check mr-3"></i> Cloud sync (unlimited devices)</li>
+                            <li class="flex items-center"><i class="fas fa-check mr-3"></i> Priority support</li>
+                            <li class="flex items-center"><i class="fas fa-check mr-3"></i> Advanced analytics</li>
+                        </ul>
+                        <button
+                            class="w-full py-3 bg-white text-indigo-600 rounded-full font-bold hover-glow text-sm">
+                            Start free trial
+                        </button>
+                    </div>
+
+                    <div
+                        class="bg-white/95 dark:bg-gray-900/80 border border-gray-100 dark:border-gray-800 p-8 rounded-2xl shadow-lg hover:scale-[1.02] transform transition-all duration-300">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text:white">Enterprise</h3>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-gray-900 dark:text-white">Custom</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 text-gray-700 dark:text-gray-300 text-sm">
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Everything in Pro</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Team collaboration</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Custom integrations</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> Dedicated account manager</li>
+                            <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3"></i> SLA & security compliance</li>
+                        </ul>
+                        <button
+                            class="w-full py-3 border-2 border-indigo-600 text-indigo-600 rounded-full font-bold hover:bg-indigo-600 hover:text-white transition-all duration-300 text-sm">
+                            Contact sales
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="py-20 gradient-bg relative overflow-hidden">
+            <div class="shape-1 top-0 right-0 animate-float"></div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 md:mb-6">
+                    Join thousands of professionals who never lose a connection.
+                </h2>
+                <p class="text-base md:text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                    Start managing your contacts smarter today. No credit card required. Cancel anytime.
+                </p>
+                <a data-th-href="@{'/register'}"
+                   class="bg-white text-indigo-600 px-8 md:px-10 py-3.5 rounded-full text-sm md:text-lg font-bold hover:scale-[1.03] transform transition-all duration-300 shadow-2xl inline-flex items-center gap-2">
+                    Start your free trial
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div data-th-replace="~{footer :: footer}"></div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script data-th-src="@{/js/script.js}"></script>
+    <script>
+        // Feature cards scroll reveal
+        document.addEventListener("DOMContentLoaded", () => {
+            const featureCards = document.querySelectorAll(".feature-card");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                        }
+                    });
+                },
+                {
+                    threshold: 0.2,
+                }
+            );
+
+            featureCards.forEach((card) => observer.observe(card));
+        });
+    </script>
+
+</body>
+
+</html>

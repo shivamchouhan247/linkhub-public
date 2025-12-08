@@ -1,0 +1,81 @@
+<!-- Navbar -->
+<nav data-th-fragment="user-navbar"
+    class="fixed top-0 z-50 w-full bg-white/70 backdrop-blur-xl shadow-xl dark:bg-gray-800/70">
+    <div class="px-4 py-3 lg:px-6 flex items-center justify-between">
+
+        <!-- Left side -->
+        <div class="flex items-center">
+            <!-- Mobile sidebar toggle -->
+            <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+                type="button"
+                class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                <span class="sr-only">Open sidebar</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" fill-rule="evenodd"
+                        d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center ms-2 md:me-24">
+                <img data-th-src="@{'/images/scm.png'}" alt="Logo" class="h-8 w-auto" />
+                <span class=" px-2 text-xl font-bold text-slate-900 dark:text-white tracking-wide">LinkHub</span>
+            </a>
+        </div>
+
+        <!-- Right side (user) -->
+        <div class="flex items-center">
+            <!-- User button -->
+            <button type="button" class="flex text-sm bg-gray-200/60 dark:bg-gray-700/60 rounded-full 
+                     focus:ring-4 focus:ring-gray-300/50 dark:focus:ring-gray-600/50 transition"
+                data-dropdown-toggle="dropdown-user">
+                <img class="w-8 h-8 rounded-full" data-th-src="${loggedInUser.profilePic}"
+                    alt="user photo">
+            </button>
+
+            <!-- Modern Dropdown -->
+            <div class="z-50 hidden my-4 w-48 text-base list-none bg-white backdrop-blur-xl border border-gray-200 rounded-xl shadow-2xl dark:bg-gray-800 dark:border-gray-700 transition-all duration-300"
+                id="dropdown-user">
+
+                <!-- User info -->
+                <div class="px-5 py-4 border-b border-gray-200 dark:border-gray-700">
+                    <p class="text-sm font-semibold text-gray-900 dark:text-white" data-th-text="${loggedInUser.name}">
+                        User Name</p>
+                    <p class="text-xs text-gray-500 truncate dark:text-gray-300" data-th-text="${loggedInUser.email}">
+                        user@gmail.com</p>
+                </div>
+
+                <!-- Menu links -->
+                <ul class="py-2 space-y-1">
+                    <li>
+                        <a data-th-href="@{/user/dashboard}"
+                            class="flex items-center px-4 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100/60 dark:text-gray-300 dark:hover:bg-gray-700/60 transition">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a data-th-href="@{/user/profile}"
+                            class="flex items-center px-4 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100/60 dark:text-gray-300 dark:hover:bg-gray-700/60 transition">
+                            Settings
+                        </a>
+                    </li>
+                    <li>
+                        <button id="theme_toggle" type="button"
+                            class="flex items-center w-full text-left px-4 py-2 text-sm text-gray-700 rounded-lg hover:bg-gray-100/60 dark:text-gray-300 dark:hover:bg-gray-700/60 transition bg-transparent border-none">
+                            <span>Light</span>
+                        </button>
+                    </li>
+                    <li>
+                        <a data-th-href="@{'/logout'}"
+                            class="flex items-center px-4 py-2 text-sm text-red-600 rounded-lg hover:bg-gray-100/60 dark:text-red-400 dark:hover:bg-gray-700/60 transition">
+                            Log Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</nav>

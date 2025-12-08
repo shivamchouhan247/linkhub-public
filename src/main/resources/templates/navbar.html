@@ -1,0 +1,313 @@
+<nav data-th-fragment="navbar"
+  class="fixed top-0 z-50 w-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border-b border-gray-200/70 dark:border-gray-800/70 shadow-md">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+
+      <!-- Left: Logo + Desktop Nav -->
+      <div class="flex items-center gap-8">
+        <!-- Logo -->
+        <a data-th-href="@{'/home'}" class="flex items-center gap-2 group">
+          <div
+            class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-sky-500 to-violet-500 shadow-md">
+            <img data-th-src="@{'/images/scm.png'}" alt="Logo" class="h-6 w-6 object-contain drop-shadow-sm" />
+          </div>
+          <span
+            class="text-xl font-semibold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
+            LinkHub
+          </span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-6">
+          <a data-th-href="@{'/home'}"
+            class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors relative">
+            Home
+            <span
+              class="absolute -bottom-1 left-0 h-[2px] w-0 bg-gradient-to-r from-indigo-500 via-sky-500 to-violet-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Actions -->
+      <div class="flex items-center gap-3">
+
+        <!-- Desktop Login -->
+        <a data-th-href="@{'/login'}" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-sm font-medium
+                 text-slate-800 dark:text-gray-200 rounded-full bg-white/80 dark:bg-gray-800/80
+                 border border-gray-200/70 dark:border-gray-700/70 shadow-sm
+                 hover:border-indigo-400/80 dark:hover:border-indigo-400/80
+                 hover:shadow-md transition-all">
+          Login
+        </a>
+
+        <!-- Desktop Get Started -->
+        <a data-th-href="@{'/register'}" class="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-semibold rounded-full
+                 text-white bg-gradient-to-r from-indigo-600 via-sky-500 to-violet-600
+                 shadow-md hover:shadow-xl hover:brightness-110 transition-all">
+          Get started
+        </a>
+
+        <!-- Dark / Light Toggle (Desktop) -->
+        <button id="theme_toggle" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium
+                 rounded-full border border-gray-300/70 dark:border-gray-600/80
+                 bg-white/70 dark:bg-gray-800/80 text-slate-700 dark:text-gray-100
+                 hover:border-indigo-400/80 hover:bg-white dark:hover:bg-gray-800
+                 shadow-sm transition-all">
+
+          <!-- Light Icon (Moon) -->
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 dark:hidden" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+          </svg>
+
+          <!-- Dark Icon (Sun) -->
+          <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden dark:inline-block" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 4.05l-.71.71m0 12.48l.71.71M19.95 19.95l.71-.71M21 12h-1M4 12H3m9-4a4 4 0 100 8 4 4 0 000-8z" />
+          </svg>
+
+          <span class="capitalize text-[11px] tracking-wide">Light</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button data-collapse-toggle="navbar-cta" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10
+                 rounded-lg text-slate-700 dark:text-gray-200
+                 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 transition" aria-controls="navbar-cta"
+          aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="navbar-cta" class="md:hidden hidden px-6 py-5 bg-white/90 dark:bg-gray-900/95
+           backdrop-blur-xl border-t border-gray-200/70 dark:border-gray-800/70 shadow-lg">
+
+    <!-- Links -->
+    <nav class="flex flex-col items-center gap-3 pb-4">
+      <a data-th-href="@{'/home'}" class="text-sm font-medium text-slate-800 dark:text-gray-200
+               hover:text-indigo-600 dark:hover:text-indigo-300 transition">
+        Home
+      </a>
+    </nav>
+
+    <!-- Mobile Actions -->
+    <div class="flex flex-col items-center gap-3">
+
+      <!-- Login -->
+      <a data-th-href="@{'/login'}" class="w-full max-w-xs text-center font-medium text-sm px-5 py-2.5 rounded-full
+               bg-white/90 dark:bg-gray-800/90 text-slate-900 dark:text-gray-100
+               border border-gray-200/70 dark:border-gray-700/70 shadow-sm
+               hover:border-indigo-400/80 hover:shadow-md transition-all">
+        Login
+      </a>
+
+      <!-- Get started -->
+      <a data-th-href="@{'/register'}" class="w-full max-w-xs text-center text-sm font-semibold px-5 py-2.5 rounded-full
+               text-white bg-gradient-to-r from-indigo-600 via-sky-500 to-violet-600
+               shadow-md hover:shadow-xl hover:brightness-110 transition-all">
+        Get started
+      </a>
+
+      <!-- Theme Toggle (Mobile) -->
+      <button id="theme_toggle_mobile" class="w-full max-w-xs flex items-center justify-center gap-2
+               font-medium text-xs px-5 py-2.5 rounded-full
+               bg-white/90 dark:bg-gray-800/90
+               border border-gray-200/70 dark:border-gray-700/70
+               text-slate-800 dark:text-gray-100
+               hover:border-indigo-400/80 hover:bg-white dark:hover:bg-gray-800
+               shadow-sm transition-all">
+
+        <!-- Moon Icon -->
+        <svg id="icon-moon-mobile" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 dark:hidden" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+        </svg>
+
+        <!-- Sun Icon -->
+        <svg id="icon-sun-mobile" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden dark:inline-block"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 4.05l-.71.71m0 12.48l.71.71M19.95 19.95l.71-.71M21 12h-1M4 12H3m9-4a4 4 0 100 8 4 4 0 000-8z" />
+        </svg>
+
+        <span class="capitalize tracking-wide">Light</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<nav data-th-fragment="homenavbar"
+  class="fixed top-0 z-50 w-full bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border-b border-gray-200/70 dark:border-gray-800/70 shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+
+      <!-- Left: Logo -->
+      <div class="flex items-center gap-3">
+        <a data-th-href="@{'/home'}" class="flex items-center gap-2 group">
+          <div
+            class="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 via-sky-500 to-violet-500 shadow-md">
+            <img data-th-src="@{'/images/scm.png'}" alt="Logo" class="h-6 w-6 object-contain drop-shadow-sm" />
+          </div>
+          <span
+            class="text-xl font-semibold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition-colors">
+            LinkHub
+          </span>
+        </a>
+      </div>
+      <div class="flex items-center gap-4">
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-6">
+          <a data-th-href="@{'/home'}"
+            class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors">
+            Home
+          </a>
+          <a href="#features"
+            class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors">
+            Features
+          </a>
+          <a href="#pricing"
+            class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors">
+            Pricing
+          </a>
+          <a data-th-href="@{'/about'}"
+            class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors">
+            About
+          </a>
+          <a data-th-href="@{'/contact'}"
+            class="text-sm font-medium text-slate-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors">
+            Contact
+          </a>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-3">
+          <!-- Get Started -->
+          <a data-th-href="@{'/register'}" class="hidden md:inline-flex items-center justify-center px-5 py-2 text-sm font-semibold rounded-full
+                   text-white bg-gradient-to-r from-indigo-600 via-sky-500 to-violet-600
+                   shadow-md hover:shadow-xl hover:brightness-110 transition-all">
+            Get started
+          </a>
+
+          <!-- Dark-Light Theme Toggle Button -->
+          <button id="theme_toggle" class="hidden md:inline-flex items-center gap-2 px-3 py-1.5 text-xs font-medium
+                   rounded-full border border-gray-300/70 dark:border-gray-600/80
+                   bg-white/70 dark:bg-gray-800/80 text-slate-700 dark:text-gray-100
+                   hover:border-indigo-400/80 hover:bg-white dark:hover:bg-gray-800
+                   shadow-sm transition-all">
+
+            <!-- Light Icon (Moon) -->
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 dark:hidden" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+            </svg>
+
+            <!-- Dark Icon (Sun) -->
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden dark:inline-block" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 4.05l-.71.71m0 12.48l.71.71M19.95 19.95l.71-.71M21 12h-1M4 12H3m9-4a4 4 0 100 8 4 4 0 000-8z" />
+            </svg>
+
+            <span class="capitalize text-[11px] tracking-wide">Light</span>
+          </button>
+
+          <!-- Mobile Toggle -->
+          <button data-collapse-toggle="navbar-cta" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10
+                   rounded-lg text-slate-700 dark:text-gray-200
+                   hover:bg-gray-100/80 dark:hover:bg-gray-800/80 transition" aria-controls="navbar-cta"
+            aria-expanded="false">
+            <span class="sr-only">Open menu</span>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="navbar-cta" class="md:hidden hidden px-6 py-5 bg-white/90 dark:bg-gray-900/95
+           backdrop-blur-xl border-t border-gray-200/70 dark:border-gray-800/70 shadow-lg">
+
+    <!-- Navigation Links -->
+    <nav class="flex flex-col items-center gap-3 pb-4">
+      <a data-th-href="@{'/home'}" class="text-sm font-medium text-slate-800 dark:text-gray-200
+               hover:text-indigo-600 dark:hover:text-indigo-300 transition">
+        Home
+      </a>
+      <a href="#features" class="text-sm font-medium text-slate-800 dark:text-gray-200
+               hover:text-indigo-600 dark:hover:text-indigo-300 transition">
+        Features
+      </a>
+      <a href="#pricing" class="text-sm font-medium text-slate-800 dark:text-gray-200
+               hover:text-indigo-600 dark:hover:text-indigo-300 transition">
+        Pricing
+      </a>
+      <a data-th-href="@{'/about'}" class="text-sm font-medium text-slate-800 dark:text-gray-200
+               hover:text-indigo-600 dark:hover:text-indigo-300 transition">
+        About
+      </a>
+      <a data-th-href="@{'/contact'}" class="text-sm font-medium text-slate-800 dark:text-gray-200
+               hover:text-indigo-600 dark:hover:text-indigo-300 transition">
+        Contact
+      </a>
+    </nav>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col items-center gap-3">
+
+      <!-- Login Button -->
+      <a data-th-href="@{'/login'}" class="w-full max-w-xs text-center font-medium text-sm px-5 py-2.5 rounded-full
+               bg-white/90 dark:bg-gray-800/90 text-slate-900 dark:text-gray-100
+               border border-gray-200/70 dark:border-gray-700/70 shadow-sm
+               hover:border-indigo-400/80 hover:shadow-md transition-all">
+        Login
+      </a>
+
+      <!-- Register Button -->
+      <a data-th-href="@{'/register'}" class="w-full max-w-xs text-center text-sm font-semibold px-5 py-2.5 rounded-full
+               text-white bg-gradient-to-r from-indigo-600 via-sky-500 to-violet-600
+               shadow-md hover:shadow-xl hover:brightness-110 transition-all">
+        Get started
+      </a>
+
+      <!-- Theme Toggle -->
+      <button id="theme_toggle_mobile" class="w-full max-w-xs flex items-center justify-center gap-2
+               font-medium text-xs px-5 py-2.5 rounded-full
+               bg-white/90 dark:bg-gray-800/90
+               border border-gray-200/70 dark:border-gray-700/70
+               text-slate-800 dark:text-gray-100
+               hover:border-indigo-400/80 hover:bg-white dark:hover:bg-gray-800
+               shadow-sm transition-all">
+
+        <!-- Moon Icon -->
+        <svg id="icon-moon-mobile" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 dark:hidden" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+        </svg>
+
+        <!-- Sun Icon -->
+        <svg id="icon-sun-mobile" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden dark:inline-block"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 4.05l-.71.71m0 12.48l.71.71M19.95 19.95l.71-.71M21 12h-1M4 12H3m9-4a4 4 0 100 8 4 4 0 000-8z" />
+        </svg>
+
+        <span class="capitalize tracking-wide">Light</span>
+      </button>
+
+    </div>
+  </div>
+</nav>

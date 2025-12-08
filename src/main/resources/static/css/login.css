@@ -1,0 +1,96 @@
+/* === Generic Transitions & Page Enter Animation === */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Use on any container you want to softly appear from bottom */
+.animate-fadeSlideUp {
+  animation: fadeSlideUp 0.5s ease-out forwards;
+}
+
+/* Smooth transition utility for hover/focus states */
+.transition-smooth {
+  transition: all 0.3s ease-in-out;
+}
+
+/* === 3D Login Card Effects === */
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotateX(1deg) rotateY(-1deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+/* Apply on the main login card container */
+.card-3d {
+  position: relative;
+  border-radius: 1rem;
+  transform-style: preserve-3d;
+  box-shadow:
+    0 18px 45px rgba(15, 23, 42, 0.18),
+    0 0 0 1px rgba(148, 163, 184, 0.18);
+  overflow: hidden;
+  animation: cardFloat 8s ease-in-out infinite;
+}
+
+/* Gradient glow border on hover */
+.card-3d::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(
+    135deg,
+    rgba(129, 140, 248, 0.7),
+    rgba(56, 189, 248, 0.5),
+    rgba(147, 51, 234, 0.7)
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+
+/* Hover lift + stronger shadow */
+.card-3d:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 22px 55px rgba(15, 23, 42, 0.28),
+    0 0 0 1px rgba(129, 140, 248, 0.7);
+}
+
+.card-3d:hover::before {
+  opacity: 1;
+}
+
+/* === Optional: Button micro interaction (if you want for login button) === */
+
+@keyframes btnPress {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(1px) scale(0.99);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Add this class along with your Tailwind classes on CTA buttons if needed */
+.btn-press:hover {
+  animation: btnPress 0.18s ease-out;
+}

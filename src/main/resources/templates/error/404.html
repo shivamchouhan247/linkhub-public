@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 | Lost in Space</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Flowbite -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <style>
+        @keyframes gradient-shift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes float-slow {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(30px, -30px) rotate(5deg);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) rotate(-5deg);
+            }
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(2px, -2px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        .bg-animated {
+            background: linear-gradient(-45deg, #0f172a, #020617, #1e293b, #0b1120);
+            background-size: 400% 400%;
+            animation: gradient-shift 15s ease infinite;
+        }
+
+        .float-character {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+
+        .fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        .stagger-1 {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
+
+        .text-glitch:hover {
+            animation: glitch 0.3s ease-in-out;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+        }
+
+        .glass-chip {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .dark .glass-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-animated min-h-screen overflow-x-hidden text-white antialiased">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+            
+            <a href="/" class="flex items-center hover:scale-110 transition-transform">
+                <img src="/images/scm.png" alt="SCM Logo" class="h-10 w-auto object-contain" />
+            </a>
+
+            <span class="glass-card px-4 py-2 rounded-full text-xs md:text-sm font-medium text-slate-200">
+                Lost in space · 404
+            </span>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="h-screen flex items-center justify-center px-6">
+        <div class="relative max-w-4xl mx-auto text-center">
+
+            <!-- Soft glowing orb background -->
+            <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px]
+                    bg-blue-500/20 rounded-full blur-[200px]"></div>
+
+            <!-- Main 404 -->
+            <h1 class="text-[160px] md:text-[200px] font-extrabold text-white/10 leading-none select-none">
+                404
+            </h1>
+
+            <!-- Text Content -->
+            <div class="space-y-6 -mt-20 relative">
+
+                <span class="glass-chip px-5 py-2 rounded-full text-sm tracking-wide">
+                    ERROR · PAGE LOST
+                </span>
+
+                <h2 class="text-4xl md:text-6xl font-black leading-tight">
+                    Lost in <span
+                        class="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-300 bg-clip-text text-transparent">
+                        Space
+                    </span>
+                </h2>
+
+                <p class="text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
+                    This page drifted away into the cosmic void.
+                    Let’s get you back to where you belong.
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex justify-center gap-4 mt-6">
+
+                    <a href="/" class="px-8 py-3 bg-white text-gray-900 rounded-full font-semibold text-lg
+                          hover:bg-gray-100 transform hover:scale-105 transition-all shadow-lg">
+                        Take me home
+                    </a>
+
+                    <a href="/contact" class="px-8 py-3 border border-white/40 text-white rounded-full font-semibold text-lg
+                          hover:bg-white/10 transform hover:scale-105 transition-all">
+                        Contact Support
+                    </a>
+                </div>
+
+                <!-- Small Links -->
+                <div class="flex justify-center gap-8 text-sm text-white/60 mt-8">
+                    <a href="/about" class="hover:text-white transition-colors underline underline-offset-4">About</a>
+                    <a href="/help" class="hover:text-white transition-colors underline underline-offset-4">Help
+                        Center</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>

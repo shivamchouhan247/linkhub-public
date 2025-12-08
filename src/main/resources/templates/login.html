@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | LinkHub</title>
+
+    <link rel="stylesheet" data-th-href="@{'/css/login.css'}">
+
+    <style>
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeSlideUp {
+            animation: fadeSlideUp 0.5s ease-out forwards;
+        }
+
+        .transition-smooth {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+    <div id="content"
+         class="mt-16 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8
+                bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950
+                animate-fadeSlideUp">
+
+        <section class="w-full max-w-6xl mx-auto">
+            <div
+                class="grid lg:grid-cols-2 gap-10 lg:gap-16
+                       bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl
+                       border border-gray-100/80 dark:border-gray-800/70
+                       rounded-2xl shadow-xl dark:shadow-gray-900/60
+                       p-6 sm:p-8 transition-smooth">
+
+                <!-- Left: Copy / Value prop -->
+                <div
+                    class="flex flex-col justify-between
+                           border-b lg:border-b-0 lg:border-r
+                           border-gray-100/60 dark:border-gray-800/60
+                           pb-6 lg:pb-0 lg:pr-8">
+
+                    <div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
+                                   bg-indigo-100 text-indigo-700
+                                   dark:bg-indigo-900/40 dark:text-indigo-300 mb-4">
+                            Welcome back to LinkHub
+                        </span>
+
+                        <h1
+                            class="text-2xl sm:text-3xl lg:text-4xl font-extrabold
+                                   text-gray-900 dark:text-white mb-3 leading-snug">
+                            Sign in and pick up<br class="hidden sm:block" />
+                            where you left off.
+                        </h1>
+
+                        <p
+                            class="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 max-w-lg">
+                            Log in to your LinkHub workspace to access contacts, links, and smart tools
+                            that keep your relationships organized and actionable.
+                        </p>
+
+                        <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                            <li class="flex items-start gap-2">
+                                <span
+                                    class="mt-1 w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-900/40
+                                           flex items-center justify-center">
+                                    <span class="text-[10px] text-indigo-700 dark:text-indigo-300">✓</span>
+                                </span>
+                                <span>Instant access to your contacts and recent activity.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span
+                                    class="mt-1 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/40
+                                           flex items-center justify-center">
+                                    <span class="text-[10px] text-emerald-700 dark:text-emerald-300">✓</span>
+                                </span>
+                                <span>Secure login with email, password, and OAuth providers.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span
+                                    class="mt-1 w-5 h-5 rounded-full bg-violet-100 dark:bg-violet-900/40
+                                           flex items-center justify-center">
+                                    <span class="text-[10px] text-violet-700 dark:text-violet-300">✓</span>
+                                </span>
+                                <span>Designed to work beautifully in both light and dark mode.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-8 text-xs text-gray-500 dark:text-gray-400">
+                        New here?
+                        <a data-th-href="@{'/register'}"
+                           class="text-indigo-600 hover:underline dark:text-indigo-400">
+                            Create a free account in minutes.
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Login Card  -->
+                <div class="flex flex-col">
+                    <div
+                        class="card-3d w-full relative overflow-hidden rounded-2xl p-[1px]
+                               bg-gradient-to-br from-indigo-500/70 via-sky-500/60 to-violet-600/70
+                               dark:from-indigo-600/70 dark:via-sky-500/60 dark:to-violet-700/70">
+
+                        <!-- Inner card -->
+                        <div
+                            class="relative z-10 w-full h-full p-6 sm:p-7
+                                   bg-white/95 dark:bg-gray-900/95 rounded-2xl
+                                   border border-white/60 dark:border-gray-800/80
+                                   shadow-md dark:shadow-none transition-smooth">
+
+                            <!-- Decorative glow -->
+                            <div
+                                class="pointer-events-none absolute -top-10 -right-10 w-32 h-32 rounded-full
+                                       bg-indigo-500/10 blur-2xl"></div>
+
+                            <!-- Heading -->
+                            <div class="flex items-start justify-between mb-5">
+                                <div>
+                                    <div
+                                        class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[11px] font-medium
+                                               bg-indigo-50 text-indigo-700
+                                               dark:bg-indigo-900/50 dark:text-indigo-200 mb-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                        Secure sign-in
+                                    </div>
+                                    <h2
+                                        class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white leading-snug">
+                                        Log in to LinkHub
+                                    </h2>
+                                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                        Enter your credentials to access your dashboard and contacts.
+                                    </p>
+                                </div>
+
+                                
+                            </div>
+
+                            <!-- Logout success -->
+                            <div data-th-if="${param.logout}">
+                                <div id="alert-1"
+                                     class="flex items-center p-3 mb-4 text-green-800 rounded-lg bg-green-50
+                                            dark:bg-gray-800 dark:text-green-400 text-xs sm:text-sm"
+                                     role="alert">
+                                    <svg class="shrink-0 w-4 h-4" aria-hidden="true"
+                                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                                    </svg>
+                                    <span class="sr-only">Info</span>
+                                    <div class="ms-3 font-medium">
+                                        You’ve been logged out successfully.
+                                    </div>
+                                    <button type="button"
+                                            class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg
+                                                   focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200
+                                                   inline-flex items-center justify-center h-7 w-7
+                                                   dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+                                            data-dismiss-target="#alert-1" aria-label="Close">
+                                        <span class="sr-only">Close</span>
+                                        <svg class="w-3 h-3" aria-hidden="true"
+                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round"
+                                                  stroke-linejoin="round" stroke-width="2"
+                                                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Error / internal message -->
+                            <div data-th-if="${param.error} or ${session.message}">
+                                <div id="alert-2"
+                                     class="flex items-center p-3 mb-4 text-red-800 rounded-lg bg-red-50
+                                            dark:bg-gray-800 dark:text-red-400 text-xs sm:text-sm"
+                                     role="alert">
+                                    <svg class="shrink-0 w-4 h-4" aria-hidden="true"
+                                         xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                                        </svg>
+                                    <span class="sr-only">Info</span>
+
+                                    <!-- Invalid Credentials -->
+                                    <div data-th-if="${param.error}" class="ms-3 font-medium">
+                                        Invalid email or password. Please try again.
+                                    </div>
+
+                                    <!-- Internal Error -->
+                                    <div data-th-if="${session.message}">
+                                        <div data-th-text="${session.message}"
+                                             class="ms-3 font-medium"></div>
+                                        <data-th-block data-th-text="${@sessionHelper.removeMessage()}"></data-th-block>
+                                    </div>
+
+                                    <button type="button"
+                                            class="ms-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg
+                                                   focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200
+                                                   inline-flex items-center justify-center h-7 w-7
+                                                   dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700"
+                                            data-dismiss-target="#alert-2" aria-label="Close">
+                                        <span class="sr-only">Close</span>
+                                        <svg class="w-3 h-3" aria-hidden="true"
+                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round"
+                                                  stroke-linejoin="round" stroke-width="2"
+                                                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Login form -->
+                            <form method="post" data-th-action="@{'/authenticate'}"
+                                  class="mt-2 space-y-5" action="#">
+
+                                <!-- Email -->
+                                <div>
+                                    <label for="email"
+                                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                        Email
+                                    </label>
+                                    <div class="relative">
+                                        <span
+                                            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none
+                                                   text-gray-400 dark:text-gray-500">
+                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                                      d="M3 8l9 6 9-6M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z" />
+                                            </svg>
+                                        </span>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            placeholder="you@company.com"
+                                            required
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                                   block w-full pl-10 p-2.5
+                                                   focus:ring-indigo-500 focus:border-indigo-500
+                                                   dark:bg-gray-800 dark:border-gray-700
+                                                   dark:text-white dark:placeholder-gray-400" />
+                                    </div>
+                                </div>
+
+                                <!-- Password -->
+                                <div>
+                                    <label for="password"
+                                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                        Password
+                                    </label>
+                                    <div class="relative">
+                                        <span
+                                            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none
+                                                   text-gray-400 dark:text-gray-500">
+                                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                                                      d="M12 15v2m-6 0a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v5zm2-7V9a4 4 0 1 1 8 0v1" />
+                                            </svg>
+                                        </span>
+                                        <input
+                                            type="password"
+                                            name="password"
+                                            id="password"
+                                            placeholder="••••••••"
+                                            required
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                                   block w-full pl-10 p-2.5
+                                                   focus:ring-indigo-500 focus:border-indigo-500
+                                                   dark:bg-gray-800 dark:border-gray-700
+                                                   dark:text-white dark:placeholder-gray-400" />
+                                    </div>
+                                </div>
+
+                                <!-- Remember + Forgot -->
+                                <div class="flex items-center gap-2">
+                                    <input id="remember" name="remember" type="checkbox"
+                                           class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50
+                                                  focus:ring-2 focus:ring-indigo-500
+                                                  dark:bg-gray-800 dark:border-gray-600
+                                                  dark:focus:ring-indigo-500" />
+                                    <label for="remember"
+                                           class="text-sm font-medium text-gray-600 dark:text-gray-300 select-none">
+                                        Remember this device
+                                    </label>
+                                    <a href="#"
+                                       class="ms-auto text-sm font-medium text-indigo-600 hover:underline dark:text-indigo-400">
+                                        Forgot password?
+                                    </a>
+                                </div>
+
+                                <!-- Login button -->
+                                <button
+                                    type="submit"
+                                    class="w-full inline-flex items-center justify-center gap-2
+                                           text-sm font-semibold text-white
+                                           bg-gradient-to-r from-indigo-600 via-sky-600 to-violet-600
+                                           hover:from-indigo-700 hover:via-sky-700 hover:to-violet-700
+                                           focus:ring-2 focus:ring-indigo-400 focus:outline-none
+                                           rounded-lg px-5 py-2.5 shadow-md hover:shadow-xl
+                                           btn-press transition-smooth">
+                                    Login to your account
+                                    <span class="text-xs">→</span>
+                                </button>
+
+                                <!-- OR separator -->
+                                <div class="flex items-center my-4">
+                                    <div class="flex-grow h-px bg-gray-200 dark:bg-gray-700"></div>
+                                    <span
+                                        class="px-3 text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                                        or continue with
+                                    </span>
+                                    <div class="flex-grow h-px bg-gray-200 dark:bg-gray-700"></div>
+                                </div>
+
+                                <!-- OAuth buttons -->
+                                <div class="flex flex-col sm:flex-row gap-3">
+                                    <!-- Google -->
+                                    <a href="/oauth2/authorization/google"
+                                       class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium
+                                              text-white bg-[#4285F4] rounded-lg shadow-md
+                                              hover:bg-[#4285F4]/90 focus:outline-none
+                                              focus:ring-2 focus:ring-[#4285F4]/50 transition-smooth">
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 18 19" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                  d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z"
+                                                  clip-rule="evenodd" />
+                                        </svg>
+                                        <span>Google</span>
+                                    </a>
+
+                                    <!-- GitHub -->
+                                    <a href="/oauth2/authorization/github"
+                                       class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium
+                                              text-white bg-[#24292F] rounded-lg shadow-md
+                                              hover:bg-[#24292F]/90 focus:outline-none
+                                              focus:ring-2 focus:ring-[#24292F]/50 transition-smooth">
+                                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                  d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                                                  clip-rule="evenodd" />
+                                        </svg>
+                                        <span>GitHub</span>
+                                    </a>
+                                </div>
+
+                                <!-- Register link -->
+                                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 text-center pt-2">
+                                    Don’t have an account yet?
+                                    <a data-th-href="@{'/register'}"
+                                       class="text-indigo-600 hover:underline dark:text-indigo-400">
+                                        Create one for free
+                                    </a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Right -->
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        console.log("login page");
+    </script>
+</body>
+
+</html>
