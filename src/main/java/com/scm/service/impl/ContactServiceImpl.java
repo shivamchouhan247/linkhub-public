@@ -248,21 +248,24 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public Contact getRawContactById(String contactId) {
-        Contact contact = null;
         try {
             if (contactId == null || contactId.isEmpty()) {
-                return contact;
+                throw new IllegalArgumentException("contactId must not be null or empty");
             }
-            contact = contactRepository.findById(contactId)
-                    .orElseThrow(() -> new ResourceNotFoundException("Contact Not found with contactId :" + contactId));
 
-        } catch (Exception e) {
-            LOGGER.warn("Unexpected error during get contact details by contact Id: {}, {}", contactId, e);
+            return contactRepository.findById(contactId)
+                    .orElseThrow(() ->
+                            new ResourceNotFoundException("Contact not found with contactId: " + contactId));
 
+        } catch (ResourceNotFoundException | IllegalArgumentException ex) {
+            LOGGER.warn("Validation error while fetching contactId {}: {}", contactId, ex.getMessage());
+            throw ex;
+        } catch (Exception ex) {
+            LOGGER.error("Unexpected error while fetching contactId {}", contactId, ex);
+            throw new RuntimeException("Failed to fetch contact details", ex);
         }
-        return contact;
-
     }
+
 
     @Override
     public Map<String, Object> updateContactDetails(AddContactRequest contactForm)
